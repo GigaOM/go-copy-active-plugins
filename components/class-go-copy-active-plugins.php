@@ -19,7 +19,6 @@ class GO_Copy_Active_Plugins
 	public function __construct()
 	{
 		add_action( 'init', array( $this, 'init' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 	}//end __construct
 
 	/**
@@ -34,38 +33,6 @@ class GO_Copy_Active_Plugins
 
 		add_action('admin_menu', array( $this, 'admin_menu' ) );
 	}//end init
-
-	/**
-	 * Hook into the wp_enqueue_scripts action to inject JS
-	 */
-	public function admin_enqueue_scripts()
-	{
-		global $pagenow;
-
-		if ( 'widgets.php' != $pagenow )
-		{
-			return;
-		}//end if
-
-		wp_register_script(
-			'go-copy-active-plugins',
-			plugins_url( 'js/go-copylayout.js', __FILE__ ),
-			array( 'jquery' ),
-			$this->script_version,
-			TRUE
-		);
-
-		wp_enqueue_script( 'go-copy-active-plugins' );
-
-		wp_register_style(
-			'go-copy-active-plugins',
-			plugins_url( 'css/go-copy-active-plugins.css', __FILE__ ),
-			array(),
-			$this->script_version
-		);
-
-		wp_enqueue_style( 'go-copy-active-plugins' );
-	}//end admin_enqueue_scripts
 
 	/**
 	 * Add the "Copy Layout" link to the admin sidebar.
