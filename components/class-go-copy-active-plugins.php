@@ -79,7 +79,7 @@ class GO_Copy_Active_Plugins
 	/**
 	 * Replace the current layout with a user-submitted layout.
 	 *
-	 * @param
+	 * @param $plugins string Linebreak separated collection of plugins to ensure are active
 	 */
 	private function replace_plugins( $plugins )
 	{
