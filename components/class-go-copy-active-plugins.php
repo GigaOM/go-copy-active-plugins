@@ -31,7 +31,7 @@ class GO_Copy_Active_Plugins
 			return;
 		}//end if
 
-		add_action('admin_menu', array( $this, 'admin_menu' ) );
+		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 	}//end init
 
 	/**
@@ -39,7 +39,7 @@ class GO_Copy_Active_Plugins
 	 */
 	public function admin_menu()
 	{
-		add_plugins_page('Copy Active Plugins', 'Copy Active Plugins', 'activate_plugins', 'copy-active-plugins', array( $this, 'page' ) );
+		add_plugins_page( 'Copy Active Plugins', 'Copy Active Plugins', 'activate_plugins', 'copy-active-plugins', array( $this, 'page' ) );
 	}//end admin_menu
 
 	/**
@@ -79,9 +79,9 @@ class GO_Copy_Active_Plugins
 	/**
 	 * Replace the current layout with a user-submitted layout.
 	 *
-	 * @param
+	 * @param $plugins string Linebreak separated collection of plugins to ensure are active
 	 */
-	public function replace_plugins( $plugins )
+	private function replace_plugins( $plugins )
 	{
 		?>
 		<div class="wrap go-copy-active-plugins">
@@ -169,7 +169,7 @@ class GO_Copy_Active_Plugins
 	 * @param $type string Type of state change being executed: (activate or deactivate)
 	 * @param $plugins array Array of plugins to change state on
 	 */
-	public function plugin_state_change( $type, $plugins )
+	private function plugin_state_change( $type, $plugins )
 	{
 		ob_start();
 
