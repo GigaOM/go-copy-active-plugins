@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Gigaom Copy Active Plugins
- * Plugin URI: http://
+ * Plugin URI: http://gigaom.com
  * Description: Export/Import activated plugins
  * Version: 2.0
  * Author: Gigaom
