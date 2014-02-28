@@ -1,4 +1,4 @@
-# go-copy-active-plugins
+# Gigaom Copy Active Plugins
 
 _Export/Import activated plugins_
 
